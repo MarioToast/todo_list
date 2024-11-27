@@ -26,6 +26,13 @@ const TodoList = () => {
     setListInputs({ ...listInputs, [index]: value});
   };
 
+  const handleDeleteTodo = (index) => {
+    const newTodos = [...todos];
+    newTodos.splice(index, 1);
+    setTodos(newTodos);
+    setListInputs({ ...listInputs, 0: ''});
+  };
+
   return (
     <>
       <div className="todo-container">
